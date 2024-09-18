@@ -1,0 +1,23 @@
+sudo apt update
+sudo apt upgrade
+sudo apt full-upgrade
+sudo reboot
+ingress rules 0.0.0.0/0   8069,8072,5432,443,80,53,25,465,587,143,993,110,995 - TCP
+egress rules 53 - UDP
+
+sudo apt install -y git
+
+To install in ubuntu server by using the script leewise.sh
+
+Make it executable: chmod +x leewise.sh
+Run the script: ./leewise.sh
+
+
+curl -O https://raw.githubusercontent.com/Ganesh-Kalluri/syzen/main/syzen.sh && chmod +x syzen.sh && ./syzen.sh
+
+
+sudo systemctl daemon-reload
+sudo systemctl enable leewise.service
+sudo systemctl start leewise.service
+sudo systemctl restart nginx
+sudo systemctl status leewise.service

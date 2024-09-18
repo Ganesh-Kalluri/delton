@@ -1,0 +1,14 @@
+[Unit]
+Description=Leewise Service
+Requires=postgresql.service
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/
+ExecStart=/home/ubuntu/venv/bin/python3 /home/ubuntu/leewise/leewise-bin -c /home/ubuntu/leewise/debian/leewise.conf
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
